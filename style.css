@@ -1,3 +1,14 @@
+.bg-img {
+    background-color: #dc3545; 
+    background-image: url("./images/Gallery1/1.png");
+    
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+}
+
 .justify-content-center
 {
     justify-content: center;
@@ -8,8 +19,7 @@
 }
 
 .mainDiv{
-    /* background-image:"C:\Users\711an\Documents\Projects\Portfolio\images\Gallery1\1.png"; */
-    /* background-color: rgb(245, 161, 231); */
+   
     color: white;
     height: 100vh;
 }
@@ -17,33 +27,35 @@
 ul{
     list-style-type: none;
 }
-/* .navitems a.active::after {
-    border-bottom: 2px solid black; 
-  color:pink;
-} */
- .navlist{
-    position: relative;
-    left: 20%;
 
- }
-.navitems a{
-    text-decoration: none;
-    color: white;
-    
+ .navlist{
+    display:flex;
+    align-items:center;
+    gap:30px;
+    list-style:none;
+    margin:0;
+    padding:0;
 }
+
+  .navitems a{
+    color:white;
+    text-decoration:none;
+    font-size:20px;
+    font-family:Snell Roundhand, cursive;
+    font-style:italic;
+}
+
 .navitems a:hover{
  text-decoration: underline;
 }
 
-
-nav {
-    /* background-color: lightblue; */
-    /* height: 100px; */
-   
-    display: flex;
-    align-items: center;
-
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 60px;
 }
+
  .navitems{
     display: inline-block;
     padding: 20px;
@@ -51,43 +63,9 @@ nav {
     font-style: italic;
      font-size:20px;
  }
-.logo {
-    border-style: solid;
-    border-radius: 70px;
-    /* margin-left: -60px; */
-    width: 100px;
-    height: 100px;
+ .logo{
+    width:100px;
+    height:100px;
+    border:2px solid white;
+    border-radius:50%;
 }
-#work
-{
-    /* position: absolute; */
-        position:relative;
-    top: 5%;
-    left:40%;
-   
-}
-#about
-{
-    /* position: absolute; */
-         position:relative;
-    top: 5%;
-    left:50%;
-}
-#contact
-{
-      position:relative;
-    top: 5%;
-    left:60%;
-}
-#openForm
-{
-      position:relative;
-    top: 5%;
-    left:70%;
-}
-/* #contact
-{
-       position:relative;
-    top: 5%;
-    left:110%;
-} */
