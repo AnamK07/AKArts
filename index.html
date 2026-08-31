@@ -2,11 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="style.css">
+   
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-
+ <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js" defer></script>
     <title>Home Page</title>
 </head>
 <body >
@@ -14,13 +15,24 @@
         <div>
 
             <!-- navigation starts -->
-            <nav>
-    <img src="./images/Artlogo1.png" class="logo" alt="Logo">
+            <nav class="navbar navbar-expand-lg">
+                <div class="container-fluid">
 
-    <ul class="navlist">
-        <li class="navitems"><a href="#gallery">Gallery</a></li>
-        <li class="navitems"><a href="#about">About</a></li>
-        <li class="navitems"><a href="#contact">Contact</a></li>
+                    <a class="navbar-brand" href="#home">
+    <img src="./images/Artlogo1.png" class="logo" alt="Logo">
+    <span class="logo-name">AK ARTS</span>
+</a>
+<!-- Hamburger Button --> 
+ <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation"> 
+    <span class="navbar-toggler-icon">
+
+    </span>
+ </button>
+ <div class="collapse navbar-collapse" id="mainNavbar">
+    <ul class="navbar-nav align-items-lg-center ms-auto">
+        <li class="navitems"><a href="#gallery" class="nav-link">Gallery</a></li>
+        <li class="navitems"><a href="#about" class="nav-link">About</a></li>
+        <li class="navitems"><a href="#contact" class="nav-link">Contact</a></li>
         <li class="navitems">
             <button class="btn btn-outline-light"
                     data-bs-toggle="modal"
@@ -29,16 +41,18 @@
             </button>
         </li>
     </ul>
+    </div>
+    </div>
 </nav>
             <!-- navigation ends -->
-
+<div class="hrline"></div>
             <!-- ================= HERO SECTION ================= -->
 
 <section id="home" class="hero-section">
 
-    <div class="container-fluid h-70">
+    <div class="container-fluid">
 
-        <div class="row hero-row h-70 align-items-center">
+        <div class="row hero-row  align-items-center">
 
             <!-- LEFT SIDE -->
             <div class="col-lg-6 col-md-6 col-12 hero-left">
@@ -53,7 +67,7 @@
                 </h1>
 
                 <p class="hero-description">
-                    Paintings &bull; Mandala &bull; Sketches &bull; Crafts 
+                    Paintings &bull; Mandala &bull; Sketches
                 </p>
 
                 <a href="#gallery" class="hero-btn">
@@ -81,23 +95,307 @@
     </div>
 
 </section>
-            <!-- dont touch -->
+         
+<!-- gallery Section -->
+        <section class="gallerySec" id="gallery">
 
-            <!-- Gallery Section -->
-             <section class="gallerySec" id="gallery">
-                <h2> My Gallery</h2>
-            <div class="container-fluid artType">
-                <h1>Canvas Paintings </h1>
-                <h1>Craft </h1>
-                <h1>Mandala Art
-                </h1>
-                <h1>Nature Drawings
-                </h1>
-                <h1>Sketches</h1>
+    <h2>My Gallery</h2>
+
+    <!-- Category Buttons -->
+    <div class="gallery-categories">
+
+        <button class="category-btn "data-category="paintings" onclick="showCategory('paintings')">
+            Paintings
+        </button>
+
+        <button class="category-btn" data-category="mandala" onclick="showCategory('mandala')">
+            Mandala Art
+        </button>
+
+        <button class="category-btn" data-category="nature" onclick="showCategory('nature')">
+            Nature Drawings
+        </button>
+
+        <button class="category-btn" data-category="sketches" onclick="showCategory('sketches')">
+            Sketches
+        </button>
+
+    </div>
 
 
+    <!-- ================= PAINTINGS ================= -->
+
+    <div class="gallery-category" id="paintings">
+
+        <!-- <h3>Paintings</h3> -->
+
+        <div class="gallery-cards">
+
+            <div class="gallery-card">
+                <img src="./images/Gallery1/mountainView.jpg"
+                     alt="Nature Painting">
+
+                <div class="card-body">
+                    <h4>Nature Painting</h4>
+                    <p>Canvas Painting</p>
+                </div>
             </div>
-        </section>  
+
+            <div class="gallery-card">
+                <img src="./images/Gallery1/Abstract.jpg"
+                     alt="Abstract Painting">
+
+                <div class="card-body">
+                    <h4>Abstract Art</h4>
+                    <p>Canvas Painting</p>
+                </div>
+            </div>
+
+            <div class="gallery-card">
+                <img src="./images/Gallery1/FloralPainting.jpg"
+                     alt="Floral Painting">
+
+                <div class="card-body">
+                    <h4>Floral Art</h4>
+                    <p>Canvas Painting</p>
+                </div>
+            </div>
+            <div class="gallery-card">
+                <img src="./images/Gallery1/Still life in acrylic_.jpg"
+                     alt="Still Life Painting">
+
+                <div class="card-body">
+                    <h4>Still Life Painting</h4>
+                    <p>Canvas Painting</p>
+                </div>
+            </div>
+
+        </div>
+
+        <a href="Gallery.html" class="see-more-btn">
+            See More →
+        </a>
+
+    </div>
+
+
+    <!-- ================= CRAFTS ================= -->
+<!-- 
+    <div class="gallery-category" id="crafts">
+
+        <h3>Crafts</h3>
+
+        <div class="gallery-cards">
+
+            <div class="gallery-card">
+                <img src="./images/Gallery1/craft1.jpg"
+                     alt="Craft 1">
+
+                <div class="card-body">
+                    <h4>Paper Craft</h4>
+                    <p>Handmade Craft</p>
+                </div>
+            </div>
+
+            <div class="gallery-card">
+                <img src="./images/Gallery1/craft2.jpg"
+                     alt="Craft 2">
+
+                <div class="card-body">
+                    <h4>Creative Craft</h4>
+                    <p>Handmade Craft</p>
+                </div>
+            </div>
+
+            <div class="gallery-card">
+                <img src="./images/Gallery1/craft3.jpg"
+                     alt="Craft 3">
+
+                <div class="card-body">
+                    <h4>Decorative Craft</h4>
+                    <p>Handmade Craft</p>
+                </div>
+            </div>
+
+        </div>
+
+        <a href="Gallery.html" class="see-more-btn">
+            See More →
+        </a>
+
+    </div> -->
+
+
+    <!-- ================= MANDALA ================= -->
+
+    <div class="gallery-category" id="mandala">
+
+        <!-- <h3>Mandala Art</h3> -->
+
+        <div class="gallery-cards">
+
+            <div class="gallery-card">
+                <img src="./images/Gallery1/floralMandala.jpg"
+                     alt="Mandala 1">
+
+                <div class="card-body">
+                    <h4>Floral Mandala</h4>
+                    <p>Mandala Art</p>
+                </div>
+            </div>
+
+            <div class="gallery-card">
+                <img src="./images/Gallery1/CircleMAndala.jpg"
+                     alt="Mandala 2">
+
+                <div class="card-body">
+                    <h4>Circle Mandala</h4>
+                    <p>Mandala Art</p>
+                </div>
+            </div>
+
+            <div class="gallery-card">
+                <img src="./images/Gallery1/patternMandala.jpg"
+                     alt="Mandala 3">
+
+                <div class="card-body">
+                    <h4>Pattern Mandala</h4>
+                    <p>Mandala Art</p>
+                </div>
+            </div>
+            <div class="gallery-card">
+                <img src="./images/Gallery1/GeometricalMandala.jpg"
+                     alt="Mandala 4">
+
+                <div class="card-body">
+                    <h4>Geometric Mandala</h4>
+                    <p>Mandala Art</p>
+                </div>
+            </div>
+
+        </div>
+
+        <a href="Gallery.html" class="see-more-btn">
+            See More →
+        </a>
+
+    </div>
+
+
+    <!-- ================= NATURE ================= -->
+
+    <div class="gallery-category" id="nature">
+
+        <!-- <h3>Nature Drawings</h3> -->
+
+        <div class="gallery-cards">
+
+            <div class="gallery-card">
+                <img src="./images/Gallery1/Mountains.jpg"
+                     alt="Nature Drawing 1">
+
+                <div class="card-body">
+                    <h4>Mountain View</h4>
+                    <p>Nature Drawing</p>
+                </div>
+            </div>
+
+            <div class="gallery-card">
+                <img src="./images/Gallery1/Sunset.jpg"
+                     alt="Nature Drawing 2">
+
+                <div class="card-body">
+                    <h4>Sunset</h4>
+                    <p>Nature Drawing</p>
+                </div>
+            </div>
+
+            <div class="gallery-card">
+                <img src="./images/Gallery1/Landscape.jpg"
+                     alt="Nature Drawing 3">
+
+                <div class="card-body">
+                    <h4>Landscape</h4>
+                    <p>Nature Drawing</p>
+                </div>
+            </div>
+            <div class="gallery-card">
+                <img src="./images/Gallery1/CitySkyline.jpg"
+                     alt="Nature Drawing 3">
+
+                <div class="card-body">
+                    <h4>City Skyline</h4>
+                    <p>Nature Drawing</p>
+                </div>
+            </div>
+
+        </div>
+
+        <a href="Gallery.html" class="see-more-btn">
+            See More →
+        </a>
+
+    </div>
+
+
+    <!-- ================= SKETCHES ================= -->
+
+    <div class="gallery-category" id="sketches">
+
+        <!-- <h3>Sketches</h3> -->
+
+        <div class="gallery-cards">
+
+            <div class="gallery-card">
+                <img src="./images/Gallery1/StillLIfeAppleSpoon.jpg"
+                     alt="Still Life Sketch">
+
+                <div class="card-body">
+                    <h4>Still Life Sketch</h4>
+                    <p>Pencil Sketch</p>
+                </div>
+            </div>
+
+            <div class="gallery-card">
+                <img src="./images/Gallery1/NatureSketchTent.jpg"
+                     alt="Nature Sketch">
+
+                <div class="card-body">
+                    <h4>Nature Sketch</h4>
+                    <p>Pencil Sketch</p>
+                </div>
+            </div>
+
+            <div class="gallery-card">
+                <img src="./images/Gallery1/CreativeSketch.jpg"
+                     alt="Creative Sketch">
+
+                <div class="card-body">
+                    <h4>Creative Sketch</h4>
+                    <p>Pencil Sketch</p>
+                </div>
+            </div>
+            <div class="gallery-card">
+                <img src="./images/Gallery1/spiderSketch.jpg"
+                     alt="Insect Sketch">
+
+                <div class="card-body">
+                    <h4>Insect Sketch</h4>
+                    <p>Pencil Sketch</p>
+                </div>
+            </div>
+
+        </div>
+
+        <a href="Gallery.html" class="see-more-btn">
+            See More →
+        </a>
+
+    </div>
+
+</section>
+
+
 <!-- About Section -->
     <section class="aboutSec" id="about">
     <h2>About Me</h2>
@@ -125,10 +423,79 @@
     </div>
     </section>
 
+    <!-- contact Section -->
+     <section id="contact" class="contactSec">
+         
+
+         <div class="contactContent">
+              <div class="contactInfo">
+                <h2>Contact Me</h2>
+                <h3>Let's Connect</h3>
+
+                <p><img src="../Portfolio/icons/Mail.png" alt="" srcset=""> :<a href="mailto:example@gmail.com">example@gmail.com</a></p>
+
+                <p><img src="../Portfolio/icons/Instagram.png" alt="" srcset=""> :<a href="#">@yourusername</a></p>
+               
+            </div>
+
+            <form class="contactForm">
+              
+                        <label class="form-label">Name</label>
+                        <input type="text" class="form-control" placeholder="Enter name" required>
+                    
+                        <label class="form-label">Email</label>
+                        <input type="email" class="form-control" placeholder="Enter email" required>
+                    
+                        <label class="form-label">Message</label>
+                        <textarea class="form-control" placeholder="Enter Message" required rows="5"></textarea>
+                   
+               <button type="submit" class="btn btn-primary " >
+                        Submit
+                    </button>
+            </form>
+
+         </div>
+     </section>
+
+     <!-- Footer section -->
+         <footer id="footer" class="footerSec">  
+            <div class="footerContent">
+                <h2>A K ARTS</h2>
+                                <p >Contact Us</p>
+                                <p >123 Art Street, Creative City</p>
+                                <p >Email: info@akarts.com</p>
+                                <a href="https://www.facebook.com" >
+                                <img src="../Portfolio/icons/FacebookWhite.png" alt="Facebook" >
+                               </a>
+                                   <a href="https://www.whatsapp.com" >
+                                    <img src="../Portfolio/icons/WhatsappWhite.png" alt="WhatsApp" >
+                                     </a>
+                                   <a href="https://www.instagram.com" >
+                                 <img src="../Portfolio/icons/InstagramWhite.png" alt="Instagram">
+                               </a>
+                                  <a href="https://www.twitter.com" >
+                                     <img src="../Portfolio/icons/TwitterWhite.png" alt="Twitter">
+                                       </a>
+                                    <a href="https://www.youtube.com">
+                                       <img src="../Portfolio/icons/YoutubeWhite.png" alt="YouTube" >
+                                     </a>
+                                     
+            </div>      
+                <!-- <td style="background-color: #000000;"> 
+                    <table width="100%"  text-align: center; padding: 20px 0;">
+                        <tr>
+                            <td style="text-align: center; padding: 30px 0; color: #ffffff;">
+                                </td>
+                        </tr>
+
+                    </table>
+                </td> -->
+            </footer>
+
         <!-- Login Modal -->
             <div class="modal fade" id="myModal" tabindex="-1">
     <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content bg-dark text-white">
+        <div class="modal-content bg-light text-dark">
 
             <div class="modal-header">
                 <h5 class="modal-title">Login</h5>
@@ -140,8 +507,12 @@
 
             <div class="modal-body">
 
-                <form action="/action_page.php">
+                <form action="">
 
+                    <div class="mb-3">
+                        <label class="form-label">Name</label>
+                        <input type="text" class="form-control" placeholder="Enter Name" required>
+                    </div>
                     <div class="mb-3">
                         <label class="form-label">Email</label>
                         <input type="email" class="form-control" placeholder="Enter email" required>

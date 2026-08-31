@@ -1,32 +1,178 @@
 /* =========================================
+   GLOBAL
+========================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* =========================================
+   NAVIGATION
+========================================= */
+
+nav.navbar {
+    width: 100%;
+    padding: 15px 5%;
+    position: relative;
+    z-index: 1000;
+}
+
+.logo {
+    width: 60px;
+    height: 60px;
+display: inline;
+    border: 2px solid white;
+    border-radius: 50%;
+
+    object-fit: cover;
+}
+.logo-name{
+    color: white;
+    margin: 20px;
+    font-size: 25px;
+font-family: "Snell Roundhand", cursive;
+font-weight: bold;
+/* text-decoration: underline; */
+
+}
+
+
+/* Navigation links */
+
+.navbar .nav-link {
+    color: white;
+    text-decoration: none;
+
+    font-size: 20px;
+
+    font-family: "Snell Roundhand", cursive;
+    font-style: italic;
+
+    margin-left: 20px;
+
+    transition: 0.3s ease;
+}
+
+.navbar .nav-link:hover {
+    color: #d6a85f;
+}
+
+
+/* Login button */
+
+.navbar .btn {
+    border-radius: 20px;
+    padding: 7px 20px;
+}
+
+
+/* Hamburger */
+
+.navbar-toggler {
+    border: 1px solid white;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+.navbar-toggler-icon {
+    filter: invert(1);
+}
+
+
+/* Navigation items */
+
+.navitems {
+    padding: 8px;
+}
+
+.navitems a {
+    color: white;
+    text-decoration: none;
+
+    font-size: 20px;
+
+    font-family: "Snell Roundhand", cursive;
+    font-style: italic;
+
+    white-space: nowrap;
+}
+
+.navitems a:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================================
+   MAIN CONTAINER
+========================================= */
+
+.mainDiv {
+    width: 100%;
+    min-height: 100vh;
+
+    color: white;
+
+    background-color: #dc3545;
+    background-image: url("./images/Gallery1/1.png");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    background-attachment: fixed;
+}
+
+
+/* =========================================
    HERO SECTION
 ========================================= */
 
 .hero-section {
-    min-height: 100vh;
     width: 100%;
+    min-height: calc(100vh - 120px);
 
     color: white;
 
     overflow: hidden;
 }
 
-
-/* Hero row */
-
 .hero-row {
-    min-height: 100vh;
-    padding: 0px 50px;
+    min-height: calc(100vh - 120px);
+
+    padding: 40px 5%;
 }
 
 
 /* =========================================
-   LEFT SIDE
+   HERO LEFT
 ========================================= */
 
 .hero-left {
-    padding: 70px 70px;
-    margin-bottom: 20%;
+    padding: 40px;
 }
 
 .hero-small-text {
@@ -40,18 +186,16 @@
     margin-bottom: 25px;
 }
 
-
 .hero-left h1 {
     font-family: "Snell Roundhand", cursive;
     font-style: italic;
 
-    font-size: clamp(1.5rem, 4vw, 4rem);
+    font-size: clamp(3rem, 5vw, 5.5rem);
 
     line-height: 0.95;
 
     margin: 0 0 30px;
 }
-
 
 .hero-description {
     font-family: Arial, sans-serif;
@@ -66,7 +210,7 @@
 
 
 /* =========================================
-   BUTTON
+   HERO BUTTON
 ========================================= */
 
 .hero-btn {
@@ -84,18 +228,16 @@
     transition: all 0.3s ease;
 }
 
-
 .hero-btn span {
     margin-left: 15px;
-    transition: 0.3s;
-}
 
+    transition: 0.3s ease;
+}
 
 .hero-btn:hover {
     background-color: white;
     color: #171717;
 }
-
 
 .hero-btn:hover span {
     margin-left: 22px;
@@ -103,24 +245,23 @@
 
 
 /* =========================================
-   RIGHT SIDE
+   HERO RIGHT
 ========================================= */
 
 .hero-right {
     display: flex;
+
     align-items: center;
     justify-content: center;
 
     padding: 40px;
 }
 
-
-/* Artwork frame */
-
 .art-frame {
     position: relative;
 
     width: min(400px, 100%);
+
     aspect-ratio: 4 / 5;
 
     padding: 15px;
@@ -136,32 +277,549 @@
     transition: 0.4s ease;
 }
 
-
 .art-frame:hover {
     transform: rotate(0deg) scale(1.02);
 }
 
-
-/* Artwork */
-
 .art-frame img {
     width: 100%;
     height: 100%;
-
-    display: block;
 
     object-fit: cover;
 }
 
 
 /* =========================================
+   GALLERY SECTION
+========================================= */
+
+.gallerySec {
+    width: 100%;
+    min-height: 100vh;
+
+    color: white;
+
+    background-color: #dc3545;
+    background-image: url("./images/Gallery1/2.png");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    background-attachment: fixed;
+
+    padding-bottom: 80px;
+}
+
+
+/* Section headings */
+
+.gallerySec h2,
+.aboutSec h2,
+.contactSec h2 {
+    font-family: "Snell Roundhand", cursive;
+    font-style: italic;
+
+    font-size: clamp(2.5rem, 5vw, 4rem);
+
+    text-decoration: underline;
+
+    text-align: center;
+
+    line-height: 1;
+
+    padding: 60px 20px 30px;
+
+    margin: 0;
+}
+
+
+/* =========================================
+   GALLERY CATEGORY BUTTONS
+========================================= */
+
+.gallery-categories {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 15px;
+
+    width: 90%;
+
+    margin: 20px auto 50px;
+}
+
+.category-btn {
+    background: transparent;
+
+    border: 1px solid white;
+
+    color: white;
+
+    padding: 10px 22px;
+
+    border-radius: 25px;
+
+    font-family: Arial, sans-serif;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.category-btn:hover,
+.category-btn.active {
+    background-color: white;
+    color: #171717;
+}
+
+
+/* =========================================
+   GALLERY CATEGORY
+========================================= */
+
+.gallery-category {
+    width: 90%;
+    max-width: 1200px;
+
+    margin: 0 auto 70px;
+
+    text-align: center;
+}
+
+
+/* =========================================
+   GALLERY CARDS - DESKTOP
+========================================= */
+
+.gallery-cards {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    gap: 30px;
+
+    align-items: stretch;
+}
+
+
+/* Individual card */
+
+.gallery-card {
+    width: 100%;
+
+    background-color: #e8dfd2;
+
+    color: #171717;
+
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    box-shadow:
+        8px 8px 0 #d6a85f,
+        0 10px 25px rgba(0, 0, 0, 0.4);
+
+    transition: transform 0.4s ease;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.gallery-card:hover {
+    transform: translateY(-10px);
+}
+
+
+/* =========================================
+   CARD IMAGE
+========================================= */
+
+.gallery-card img {
+    width: 100%;
+
+    height: 300px;
+
+    display: block;
+
+    /*
+       CONTAIN keeps the complete artwork visible.
+       It prevents the image from being cropped.
+    */
+
+    object-fit: contain;
+
+    padding: 10px;
+
+    background-color: #e8dfd2;
+}
+
+
+/* =========================================
+   CARD BODY
+========================================= */
+
+.gallery-card .card-body {
+    padding: 20px;
+
+    text-align: center;
+
+    flex: 1;
+}
+
+.gallery-card h4 {
+    font-family: "Snell Roundhand", cursive;
+
+    font-style: italic;
+
+    font-size: 26px;
+
+    margin: 0 0 8px;
+}
+
+.gallery-card p {
+    font-family: Arial, sans-serif;
+
+    font-size: 14px;
+
+    color: #555;
+
+    margin: 0;
+}
+
+
+/* =========================================
+   SEE MORE BUTTON
+========================================= */
+
+.see-more-btn {
+    display: inline-block;
+
+    margin-top: 40px;
+
+    padding: 12px 30px;
+
+    border: 1px solid white;
+
+    color: white;
+
+    text-decoration: none;
+
+    transition: 0.3s ease;
+}
+
+.see-more-btn:hover {
+    background-color: white;
+
+    color: #171717;
+}
+
+
+/* =========================================
+   ABOUT SECTION
+========================================= */
+
+.aboutSec {
+    width: 100%;
+    min-height: 100vh;
+
+    color: white;
+
+    background-color: #dc3545;
+    background-image: url("./images/Gallery1/4.png");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    background-attachment: fixed;
+
+    padding-bottom: 80px;
+}
+
+.aboutContent {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 60px;
+
+    width: min(1000px, 90%);
+
+    margin: auto;
+
+    padding: 30px 0;
+}
+
+.artist-image {
+    width: 300px;
+    height: 300px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+}
+
+.about-text {
+    max-width: 500px;
+
+    font-size: 18px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   CONTACT SECTION
+========================================= */
+
+.contactSec {
+    width: 100%;
+    min-height: 100vh;
+
+    color: white;
+
+    background-color: #dc3545;
+    background-image: url("./images/Gallery1/3.png");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    background-attachment: fixed;
+
+    padding-bottom: 80px;
+}
+
+.contactContent {
+    display: flex;
+
+    justify-content: center;
+    align-items: flex-start;
+
+    gap: 80px;
+
+    width: min(900px, 90%);
+
+    margin: auto;
+
+    padding: 40px 0;
+}
+
+.contactInfo,
+.contactForm {
+    flex: 1;
+}
+
+.contactInfo h3 {
+    font-size: 28px;
+}
+
+.contactInfo p {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin: 20px 0;
+}
+
+.contactInfo img {
+    width: 45px;
+    height: 45px;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+}
+
+.contactInfo a {
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 20px;
+
+    font-family: "Snell Roundhand", cursive;
+
+    font-style: italic;
+}
+
+
+/* =========================================
+   CONTACT FORM
+========================================= */
+
+.contactForm {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+
+    width: 100%;
+}
+
+.contactForm input,
+.contactForm textarea,
+.contactForm button {
+    width: 100%;
+
+    padding: 10px;
+
+    border-radius: 5px;
+}
+
+.contactForm input,
+.contactForm textarea {
+    border: none;
+}
+
+.contactForm textarea {
+    resize: vertical;
+}
+
+.contactForm button {
+    border: none;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.footerSec {
+    width: 100%;
+
+    background-color: black;
+
+    color: white;
+}
+
+.footerContent {
+    width: 100%;
+
+    text-align: center;
+
+    padding: 50px 20px;
+}
+
+.footerContent p {
+    font-size: 16px;
+}
+
+.footerContent img {
+    width: 60px;
+    height: 60px;
+
+    border-radius: 50%;
+
+    margin: 5px;
+
+    display: inline-block;
+}
+
+.footerContent a {
+    text-decoration: none;
+}
+
+
+/* =========================================
+   LAPTOP
+   993px - 1200px
+========================================= */
+
+@media (max-width: 1200px) {
+
+    .gallery-cards {
+        gap: 25px;
+    }
+
+    .gallery-card img {
+        height: 280px;
+    }
+
+    .hero-left {
+        padding: 30px;
+    }
+
+    .hero-right {
+        padding: 30px;
+    }
+}
+
+
+/* =========================================
    TABLET
+   769px - 992px
 ========================================= */
 
 @media (max-width: 992px) {
 
+    /* Navigation */
+
+    nav.navbar {
+        padding: 15px 4%;
+    }
+
+    .logo {
+        width: 55px;
+        height: 55px;
+    }
+
+    .navbar-collapse {
+        margin-top: 15px;
+
+        padding: 15px;
+
+        background-color: #dc3545;
+
+        border-radius: 10px;
+    }
+
+    .navbar-nav {
+        align-items: center !important;
+    }
+
+    .navbar .nav-link {
+        margin-left: 0;
+
+        padding: 10px;
+
+        text-align: center;
+    }
+
+    .navbar .navitems {
+        padding: 5px;
+
+        text-align: center;
+    }
+
+    .navbar .btn {
+        width: 100%;
+
+        max-width: 150px;
+
+        margin-top: 5px;
+    }
+
+    .navitems a {
+        font-size: 18px;
+    }
+
+
+    /* Hero */
+
     .hero-row {
-        padding: 50px 4%;
+        padding: 30px 3%;
     }
 
     .hero-left {
@@ -176,37 +834,130 @@
         font-size: clamp(3rem, 6vw, 5rem);
     }
 
-    .hero-description {
-        font-size: 14px;
+
+    /* Gallery */
+
+    .gallery-cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 25px;
     }
 
+    .gallery-card img {
+        height: 280px;
+    }
+
+
+    /* Contact */
+
+    .contactContent {
+        gap: 40px;
+    }
+    .aboutContent {
+        width: 100%;
+        padding: 30px 40px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        gap: 30px;
+    }
+
+    .artist-image {
+        width: 300px;
+        height: 230px;
+
+        flex-shrink: 0;
+    }
+
+    .about-text {
+        width: 100%;
+        max-width: 500px;
+
+        font-size: 16px;
+        line-height: 1.6;
+
+        overflow-wrap: break-word;
+    }
+
+    .about-text h3 {
+        font-size: 26px;
+        margin-bottom: 10px;
+    }
+
+    .about-text p {
+        margin-bottom: 15px;
+    }
 }
 
 
 /* =========================================
    MOBILE
+   481px - 768px
 ========================================= */
 
 @media (max-width: 768px) {
+
+    /* Navigation */
+
+    nav.navbar {
+        padding: 15px;
+    }
+
+    .logo {
+        width: 55px;
+        height: 55px;
+    }
+     .hrline
+    {
+            width: 100%;
+    background-color: black;
+    height: 3px;
+    }
+
+    .navitems {
+        padding: 5px;
+    }
+
+    .navitems a {
+        font-size: 16px;
+    }
+
+
+    /* Background */
+
+    .mainDiv,
+    .gallerySec,
+    .aboutSec,
+    .contactSec {
+        background-attachment: scroll;
+
+        background-position: center;
+    }
+
+
+    /* =====================================
+       HERO
+    ===================================== */
 
     .hero-section {
         min-height: auto;
     }
 
-
     .hero-row {
         min-height: auto;
 
-        padding: 70px 20px;
+        padding: 50px 15px;
 
         display: flex;
+
         flex-direction: column;
     }
 
-
-    /* Text first */
-
     .hero-left {
+        width: 100%;
+
         padding: 20px;
 
         text-align: center;
@@ -214,14 +965,13 @@
         order: 1;
     }
 
-
     .hero-small-text {
         font-size: 11px;
+
         letter-spacing: 3px;
 
         margin-bottom: 20px;
     }
-
 
     .hero-left h1 {
         font-size: clamp(3rem, 14vw, 5rem);
@@ -230,7 +980,6 @@
 
         margin-bottom: 25px;
     }
-
 
     .hero-description {
         font-size: 13px;
@@ -242,261 +991,304 @@
         margin-bottom: 30px;
     }
 
-
-    /* Image second */
-
     .hero-right {
-        padding: 30px 20px;
+        width: 100%;
+
+        padding: 30px 15px;
 
         order: 2;
     }
 
-
     .art-frame {
-        width: min(350px, 90vw);
+        width: min(350px, 85vw);
 
         box-shadow:
             12px 12px 0 #d6a85f,
             0 15px 35px rgba(0, 0, 0, 0.5);
     }
 
-}
 
-/* dont touch */
-/* Background */
-.mainDiv{
-    background-color: #dc3545;
-    background-image: url("./images/Gallery1/1.png");
+    /* =====================================
+       SECTION HEADINGS
+    ===================================== */
 
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    .gallerySec h2,
+    .aboutSec h2,
+    .contactSec h2 {
+        font-size: clamp(2.5rem, 12vw, 4rem);
 
-    /* Better to disable fixed background on mobile */
-    background-attachment: fixed;
- color: white;
-    min-height: 100vh;
-    width: 100%;
-}
-.gallerySec
-{
-  background-color: #dc3545;
-    background-image: url("./images/Gallery1/2.png");
+        padding: 50px 15px 25px;
+    }
 
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
 
-    /* Better to disable fixed background on mobile */
-    background-attachment: fixed;
+    /* =====================================
+       GALLERY
+    ===================================== */
 
-    min-height: 100vh;
-    width: 100%;
-}
-.aboutSec{
-    background-color: #dc3545;
-    background-image: url("./images/Gallery1/4.png");
+    .gallery-category {
+        width: 90%;
 
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+        margin-bottom: 50px;
+    }
 
-    /* Better to disable fixed background on mobile */
-    background-attachment: fixed;
+    .gallery-cards {
+        display: grid;
 
-    min-height: 100vh;
-    width: 100%;
-}
-/* Main container */
+        grid-template-columns: 1fr;
 
-/* Remove default ul styling */
-ul {
-    list-style-type: none;
-}
+        gap: 30px;
 
-/* Navigation list */
-.navlist {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
+        width: 100%;
+    }
 
-/* Navigation links */
-.navitems a {
-    color: white;
-    text-decoration: none;
-    font-size: 20px;
-    font-family: "Snell Roundhand", cursive;
-    font-style: italic;
-}
+    .gallery-card {
+        width: 100%;
 
-.navitems a:hover {
-    text-decoration: underline;
-}
+        max-width: 450px;
 
-/* Navigation */
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 5%;
-}
+        margin: 0 auto;
+    }
 
-/* Navigation items */
-.navitems {
-    padding: 10px;
-    font-family: "Snell Roundhand", cursive;
-    font-style: italic;
-    font-size: 20px;
-}
+    .gallery-card img {
+        width: 100%;
 
-/* Logo */
-.logo {
-    width: 100px;
-    height: 100px;
-    border: 2px solid white;
-    border-radius: 50%;
-    object-fit: cover;
-}
+        height: 320px;
 
-/* Main heading area */
-.artType {
-    text-align: center;
-    font-family: "Snell Roundhand", cursive;
-    font-style: italic;
-    padding: 30px 15px;
-}
+        padding: 10px;
 
-.artType h1 {
-    font-size: clamp(1rem, 5vw, 40px);
-    margin: 10px 0;
-}
-.gallerySec h2 {
-    font-family: "Snell Roundhand", cursive;
-    font-style: italic;
+        /*
+           Complete image is shown.
+           No cropping.
+        */
 
-    font-size: clamp(2rem , 4vw, 4rem);
-    text-decoration: underline;
- text-align: center;
-    line-height: 0.95;
-padding: 50px 10px;
-    margin: 0 0 30px;
-}
-.aboutSec h2 {
-    font-family: "Snell Roundhand", cursive;
-    font-style: italic;
+        object-fit: contain;
+    }
 
-    font-size: clamp(2rem , 4vw, 4rem);
-    text-decoration: underline;
- text-align: center;
-    line-height: 0.95;
-padding: 50px 10px;
-    margin: 0 0 30px;
-}
-.aboutContent {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 50px;
-    max-width: 1000px;
-    margin: auto;
-}
-.artist-image {
-    width: 300px;
-    height: 300px;
-    object-fit: cover;
-    border-radius: 50%;
-}
-.about-text {
-    max-width: 500px;
-    font-size: 18px;
-    line-height: 1.7;
-}
+    .gallery-card .card-body {
+        padding: 18px;
+    }
 
-/* =========================
-   TABLET
-   ========================= */
+    .gallery-card h4 {
+        font-size: 28px;
+    }
 
-@media (max-width: 768px) {
+    .gallery-card p {
+        font-size: 15px;
+    }
 
-    nav {
+
+    /* =====================================
+       ABOUT
+    ===================================== */
+
+    .aboutContent {
+        width: 90%;
+
         flex-direction: column;
-        padding: 15px;
-        gap: 15px;
+
+        text-align: center;
+
+        gap: 30px;
+
+        padding: 20px 0;
     }
 
-    .logo {
-        width: 80px;
-        height: 80px;
+    .artist-image {
+        width: 220px;
+        height: 220px;
     }
 
-    .navlist {
-        flex-wrap: wrap;
-        gap: 5px 10px;
+    .about-text {
+        max-width: 100%;
+
+        font-size: 16px;
+
+        line-height: 1.6;
     }
 
-    .navitems {
-        padding: 5px 10px;
+
+    /* =====================================
+       CONTACT
+    ===================================== */
+
+    .contactContent {
+        width: 90%;
+
+        flex-direction: column;
+
+        gap: 40px;
+
+        padding: 20px 0;
     }
 
-    .navitems a {
-        font-size: 17px;
+    .contactInfo,
+    .contactForm {
+        width: 100%;
     }
 
-    .artType {
-        padding-top: 20px;
+    .contactInfo {
+        text-align: center;
     }
 
-    /* Fixed backgrounds can behave badly on mobile */
-    .bg-img {
-        background-attachment: scroll;
-         background-size: cover;
-        background-position: center;
+    .contactInfo p {
+        justify-content: center;
     }
-    
+
+    .contactForm input,
+    .contactForm textarea,
+    .contactForm button {
+        width: 100%;
+    }
 }
 
 
-/* =========================
-   MOBILE
-   ========================= */
+/* =========================================
+   SMALL MOBILE
+   480px and below
+========================================= */
 
 @media (max-width: 480px) {
 
-    nav {
+    /* Navigation */
+
+    nav.navbar {
         padding: 10px;
     }
 
     .logo {
-        width: 70px;
-        height: 70px;
+        width: 45px;
+        height: 45px;
+    }
+    .logo-name {
+       font-size: 20px;
+    }
+    .hrline
+    {
+            width: 100%;
+    background-color: black;
+    height: 3px;
     }
 
-    .navlist {
-        width: 100%;
-        justify-content: center;
-        gap: 5px;
+    .navbar-collapse {
+        padding: 10px;
     }
 
-    .navitems {
-        padding: 5px;
+    .navbar .nav-link {
+        font-size: 18px;
     }
 
     .navitems a {
         font-size: 15px;
     }
 
-    .artType h1 {
-        font-size: 2rem;
-        margin: 8px 0;
+    .navitems {
+        padding: 4px;
     }
 
-    .bg-img {
-        background-position: center;
-        background-attachment: scroll;
+
+    /* =====================================
+       HERO
+    ===================================== */
+
+    .hero-row {
+        padding: 40px 10px;
+    }
+
+    .hero-left {
+        padding: 15px 10px;
+    }
+
+    .hero-description {
+        font-size: 12px;
+
+        letter-spacing: 0.5px;
+    }
+
+    .hero-btn {
+        padding: 11px 18px;
+
+        font-size: 14px;
+    }
+
+    .art-frame {
+        width: 85vw;
+
+        padding: 10px;
+    }
+
+
+    /* =====================================
+       GALLERY
+    ===================================== */
+
+    .gallery-category {
+        width: 92%;
+    }
+
+    .gallery-cards {
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+    }
+
+    .gallery-card {
+        width: 100%;
+
+        max-width: 100%;
+    }
+
+    .gallery-card img {
+        width: 100%;
+
+        height: 300px;
+
+        padding: 8px;
+
+        object-fit: contain;
+    }
+
+    .gallery-card .card-body {
+        padding: 15px;
+    }
+
+    .gallery-card h4 {
+        font-size: 25px;
+    }
+
+    .gallery-card p {
+        font-size: 14px;
+    }
+
+
+    /* =====================================
+       ABOUT
+    ===================================== */
+
+    .artist-image {
+        width: 180px;
+        height: 180px;
+    }
+
+
+    /* =====================================
+       CONTACT
+    ===================================== */
+
+    .contactInfo a {
+        font-size: 16px;
+    }
+
+
+    /* =====================================
+       FOOTER
+    ===================================== */
+
+    .footerContent {
+        padding: 40px 15px;
+    }
+
+    .footerContent img {
+        width: 40px;
+        height: 40px;
     }
 }
